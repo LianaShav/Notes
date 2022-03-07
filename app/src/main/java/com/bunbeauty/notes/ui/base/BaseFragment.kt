@@ -1,11 +1,20 @@
 package com.bunbeauty.notes.ui.base
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.TEXT_ALIGNMENT_CENTER
 import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
+import android.widget.LinearLayout
+import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.bunbeauty.notes.R
+import com.google.android.material.snackbar.Snackbar
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseFragment<B : ViewBinding> : Fragment() {
@@ -38,4 +47,19 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
         return method.invoke(null, inflater, container, false) as B
     }
 
+    fun showSnackbar(errorMessage: String, textColorId: Int, backgroundColorId: Int) {
+        val snack = Snackbar.make(binding.root, errorMessage, Snackbar.LENGTH_SHORT)
+            .setBackgroundTint(ContextCompat.getColor(requireContext(), backgroundColorId))
+            .setTextColor(ContextCompat.getColor(requireContext(), textColorId))
+            .setActionTextColor(ContextCompat.getColor(requireContext(), textColorId))
+        val layoutParams = LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT).apply {
+            gravity = Gravity.TOP
+            setMargins(16, 16, 16, 0)
+        }
+        with(snack) {
+            view.layoutParams = layoutParams
+            view.findViewById<TextView>(R.id.snackbar_text).textAlignment = TEXT_ALIGNMENT_CENTER
+            show()
+        }
+    }
 }
