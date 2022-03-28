@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/notesFragment"
         tools:layout="@layout/fragment_notes"
-        android:name="com.bunbeauty.notes.ui.NotesFragment"
+        android:name="com.bunbeauty.notes.ui.notes.NotesFragment"
         android:label="NotesFragment" >
         <action
             android:id="@+id/action_notesFragment_to_selectedNoteFragment"
