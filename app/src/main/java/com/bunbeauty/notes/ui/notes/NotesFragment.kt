@@ -7,97 +7,21 @@ import com.bunbeauty.notes.ui.base.BaseFragment
 
 class NotesFragment:BaseFragment<FragmentNotesBinding>() {
 
-
     val notesAdapter = NotesAdapter()
+
+    val viewModel:NotesViewModel= NotesViewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.fragmentNotesRvNotes.adapter = notesAdapter
-        val notes = listOf(
-            NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),
-            NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),NoteItem(
-                id = "7",
-                title = "pisi",
-                time = "13:00",
-                date = "28.7.22"
-            ),
-        )
+        val notes = viewModel.getNotes().map { NoteItem(
+            id = it.id,
+            title = it.title,
+            time = it.time,
+            date = it.date
+
+        ) }
         notesAdapter.setItems(notes)
     }
 

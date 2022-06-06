@@ -1,4 +1,4 @@
-package com.bunbeauty.notes.ui
+package com.bunbeauty.notes.ui.login
 
 import android.os.Bundle
 import android.view.View
@@ -7,7 +7,6 @@ import androidx.navigation.fragment.findNavController
 import com.bunbeauty.notes.R
 import com.bunbeauty.notes.databinding.FragmentLoginBinding
 import com.bunbeauty.notes.ui.base.BaseFragment
-import com.bunbeauty.notes.view_model.LoginViewModel
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
