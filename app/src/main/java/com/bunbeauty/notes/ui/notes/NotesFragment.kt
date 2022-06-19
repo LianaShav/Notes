@@ -2,6 +2,7 @@ package com.bunbeauty.notes.ui.notes
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.bunbeauty.notes.databinding.FragmentNotesBinding
 import com.bunbeauty.notes.ui.base.BaseFragment
 
@@ -23,6 +24,9 @@ class NotesFragment:BaseFragment<FragmentNotesBinding>() {
 
         ) }
         notesAdapter.setItems(notes)
+        binding.addNoteFloatingActionButton.setOnClickListener{
+            findNavController().navigate(NotesFragmentDirections.actionNotesFragmentToAddNoteFragment())
+        }
     }
 
 }

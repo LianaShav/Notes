@@ -15,4 +15,22 @@
     tools:itemCount="5"
     tools:listitem="@layout/element_nots"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/addNoteFloatingActionButton"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/design_default_color_primary"
+        />
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
