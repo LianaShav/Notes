@@ -7,4 +7,8 @@
     <string name="hint_login_username">Username</string>
     <string name="hint_login_password">Password</string>
 
+
+    <string name="hint_add_note_title">Title</string>
+    <string name="hint_add_note_note">Note</string>
+    <string name="action_add_note_add">Add</string>
 </resources>
